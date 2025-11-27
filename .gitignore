@@ -9,3 +9,4 @@ dist-ssr
 *.log
 npm-debug.log*
 .eslintcache
+package-lock.json
