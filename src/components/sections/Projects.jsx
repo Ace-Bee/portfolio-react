@@ -1,10 +1,16 @@
-import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 import { Github, ExternalLink } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { revealChildren } from '@/lib/gsap'
 
 const Projects = () => {
+    const sectionRef = useRef(null)
+    useEffect(() => {
+        const el = sectionRef.current
+        if (el) revealChildren(el, '.reveal-item')
+    }, [])
     const projects = [
         {
             title: "Analytics Dashboard",
@@ -30,31 +36,19 @@ const Projects = () => {
     ]
 
     return (
-        <section id="projects" className="py-24">
+        <section id="projects" ref={sectionRef} className="py-24">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16 reveal-item">
                     <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">My Projects</h2>
                     <div className="w-20 h-1.5 bg-gradient-to-r from-gradient-start to-gradient-end rounded-full mx-auto mb-8" />
                     <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                         Here are some of my recent works showcasing my skills in web development and UI design.
                     </p>
-                </motion.div>
+                </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                        >
+                        <div key={index} className="reveal-item">
                             <Card className="overflow-hidden h-full flex flex-col hover:shadow-glow transition-all duration-300 group border-border/50">
                                 <div className="relative overflow-hidden h-48">
                                     <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60 z-10" />
@@ -94,7 +88,7 @@ const Projects = () => {
                                     </Button>
                                 </CardFooter>
                             </Card>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

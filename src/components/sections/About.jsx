@@ -1,10 +1,16 @@
-import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 import { Briefcase, GraduationCap, Calendar } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { revealChildren } from '@/lib/gsap'
 
 const About = () => {
+    const sectionRef = useRef(null)
+    useEffect(() => {
+        const el = sectionRef.current
+        if (el) revealChildren(el, '.reveal-item')
+    }, [])
     const experience = [
         {
             role: "Senior Frontend Developer",
@@ -42,15 +48,9 @@ const About = () => {
     ]
 
     return (
-        <section id="about" className="py-24 bg-secondary/30">
+        <section id="about" ref={sectionRef} className="py-24 bg-secondary/30">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16 reveal-item">
                     <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">About Me</h2>
                     <div className="w-20 h-1.5 bg-gradient-to-r from-gradient-start to-gradient-end rounded-full mx-auto mb-8" />
                     <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
@@ -58,15 +58,9 @@ const About = () => {
                         seamless user experiences. With expertise in modern web technologies, I bring
                         ideas to life through clean code and intuitive interfaces.
                     </p>
-                </motion.div>
+                </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="max-w-3xl mx-auto"
-                >
+                <div className="max-w-3xl mx-auto reveal-item">
                     <Tabs defaultValue="experience" className="w-full">
                         <div className="flex justify-center mb-8">
                             <TabsList className="grid w-full max-w-md grid-cols-2">
@@ -77,12 +71,7 @@ const About = () => {
 
                         <TabsContent value="experience" className="space-y-6">
                             {experience.map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.1 }}
-                                >
+                                <div key={index} className="reveal-item">
                                     <Card className="border-l-4 border-l-primary hover:bg-accent/5 transition-colors">
                                         <CardHeader>
                                             <div className="flex justify-between items-start flex-wrap gap-2">
@@ -100,18 +89,13 @@ const About = () => {
                                             <p className="text-muted-foreground">{item.description}</p>
                                         </CardContent>
                                     </Card>
-                                </motion.div>
+                                </div>
                             ))}
                         </TabsContent>
 
                         <TabsContent value="education" className="space-y-6">
                             {education.map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.1 }}
-                                >
+                                <div key={index} className="reveal-item">
                                     <Card className="border-l-4 border-l-blue-500 hover:bg-accent/5 transition-colors">
                                         <CardHeader>
                                             <div className="flex justify-between items-start flex-wrap gap-2">
@@ -129,11 +113,11 @@ const About = () => {
                                             <p className="text-muted-foreground">{item.description}</p>
                                         </CardContent>
                                     </Card>
-                                </motion.div>
+                                </div>
                             ))}
                         </TabsContent>
                     </Tabs>
-                </motion.div>
+                </div>
             </div>
         </section>
     )
