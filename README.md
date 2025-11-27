@@ -76,6 +76,7 @@ src/
 *   **Colors**: Edit `src/index.css` to change CSS variables (primary colors, background, etc.).
 *   **Content**: Update text in `src/components/sections/` files.
 *   **Projects**: Modify the `projects` array in `src/components/sections/Projects.jsx`.
+*   **Resume**: Add your `cv.pdf` file to the `public/` folder to enable the "Download CV" button.
 
 ## 📄 License & Rights
 
