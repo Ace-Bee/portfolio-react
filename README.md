@@ -1,29 +1,90 @@
-# React + Vite
+# Modern React Portfolio Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, responsive, and high-performance portfolio template built with **React**, **Vite**, **Tailwind CSS**, and **Framer Motion**. Designed for developers and creatives to showcase their work with style.
 
-Currently, two official plugins are available:
+![Home Section](public/screenshots/home.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+*   **Modern Design**: Dark mode aesthetic with glassmorphism effects and smooth gradients.
+*   **Responsive**: Fully optimized for mobile, tablet, and desktop.
+*   **Animations**: Fluid entrance animations and interactions using Framer Motion.
+*   **Component-Based**: Modular structure using Reusable UI components (Button, Card, Badge, Tabs).
+*   **Performance**: Fast load times powered by Vite.
+*   **Clean Code**: Linted with ESLint (React + Hooks rules enabled).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+*   **Framework**: [React](https://react.dev/) (v19)
+*   **Build Tool**: [Vite](https://vitejs.dev/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/) (v4)
+*   **Icons**: [Lucide React](https://lucide.dev/)
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+*   **Utils**: `clsx` & `tailwind-merge` for class management.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
 
-## License & Rights
+```bash
+src/
+├── components/
+│   ├── sections/    # Page sections (Hero, About, Projects, Contact)
+│   └── ui/          # Reusable UI primitives (Button, Card, etc.)
+├── lib/             # Utility functions (cn.js)
+├── App.jsx          # Main application layout
+├── main.jsx         # Entry point
+└── index.css        # Global styles & Tailwind directives
+```
 
-This project is licensed under the MIT License, but with a strict attribution requirement.
+## 📸 Screenshots
+
+### About Section
+![About Section](public/screenshots/about.png)
+
+### Projects Section
+![Projects Section](public/screenshots/projects.png)
+
+### Contact Section
+![Contact Section](public/screenshots/contact.png)
+
+> **Note**: To see these screenshots, please save the images from the conversation to `public/screenshots/` folder with names: `home.png`, `about.png`, `projects.png`, `contact.png`.
+
+## 🚀 Getting Started
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/portfolio-react.git
+    cd portfolio-react
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production**
+    ```bash
+    npm run build
+    ```
+
+## 🎨 Customization
+
+*   **Colors**: Edit `src/index.css` to change CSS variables (primary colors, background, etc.).
+*   **Content**: Update text in `src/components/sections/` files.
+*   **Projects**: Modify the `projects` array in `src/components/sections/Projects.jsx`.
+
+## 📄 License & Rights
+
+This project is licensed under the MIT License with attribution requirements.
 
 **ATTRIBUTION REQUIREMENT:**
 Any use, modification, or distribution of this project must include clear attribution to **Ace** visible at the end of the project or in the footer.
 
-## Contact
+## 📬 Contact
 
-For any inquiries, please contact:
-**Email:** ihabeb330@gmail.com
-**GitHub:** [Ace](https://github.com/Ace-Bee)
+*   **Email**: ihabeb330@gmail.com
+*   **GitHub**: [Ace](https://github.com/Ace-Bee)

@@ -54,7 +54,7 @@ const About = () => {
                     <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">About Me</h2>
                     <div className="w-20 h-1.5 bg-gradient-to-r from-gradient-start to-gradient-end rounded-full mx-auto mb-8" />
                     <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-                        I'm a passionate developer with a keen eye for design and a love for creating
+                        I&apos;m a passionate developer with a keen eye for design and a love for creating
                         seamless user experiences. With expertise in modern web technologies, I bring
                         ideas to life through clean code and intuitive interfaces.
                     </p>
